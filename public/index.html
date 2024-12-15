@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Event Registration</h1>
+    
+    <h2>Register for Event</h2>
+    <form id="register-form">
+        <input type="text" id="eventName" placeholder="Event Name" required />
+        <input type="text" id="userName" placeholder="Your Name" required />
+        <button type="submit">Register</button>
+    </form>
+    
+    <h2>Cancel Registration</h2>
+    <form id="cancel-form">
+        <input type="text" id="cancelEventName" placeholder="Event Name" required />
+        <input type="text" id="cancelUserName" placeholder="Your Name" required />
+        <button type="submit">Cancel Registration</button>
+    </form>
+    
+    <h2>Attendees</h2>
+    <button id="view-attendees">View Attendees</button>
+    <ul id="attendees-list"></ul>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
