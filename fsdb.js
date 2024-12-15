@@ -1,17 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(__dirname, 'data.json');
+// Path to store data file
+const dbPath = path.join(__dirname, 'registrations.json');
 
-function readDatabase() {
-    if (!fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, JSON.stringify([])); // Initialize database
+// Read data from file
+const readData = () => {
+    try {
+        const data = fs.readFileSync(dbPath);
+        return JSON.parse(data);
+    } catch (err) {
+        return [];
     }
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-}
+};
 
-function writeDatabase(data) {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-}
+// Write data to file
+const writeData = (data) => {
+    fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
+};
 
-module.exports = { readDatabase, writeDatabase };
+module.exports = { readData, writeData };
+
