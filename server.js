@@ -53,3 +53,10 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
+const { readData, writeData } = require('./fsdb');
+
+// Get data from the file on server start
+let registrations = readData();
+
+
+
