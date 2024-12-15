@@ -21,3 +21,8 @@ const writeData = (data) => {
 
 module.exports = { readData, writeData };
 
+const { readData, writeData } = require('./fsdb');
+
+// Get data from the file on server start
+let registrations = readData();
+
